@@ -4,7 +4,7 @@ FROM ubuntu:latest
 RUN apt update && apt-get install -y apt-transport-https
 RUN apt install -y software-properties-common
 
-# install jdk 8
+# install jdk 17
 RUN apt install -y openjdk-17-jre
 
 VOLUME [ "/server" ]
