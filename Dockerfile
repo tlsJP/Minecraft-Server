@@ -13,4 +13,4 @@ WORKDIR /server
 EXPOSE 25565/tcp
 EXPOSE 25565/udp
 
-CMD ["java", "-jar","server.jar","nogui"]
+CMD ["java", "-Xms1G", "-Xmx4G", "-jar", "server.jar", "nogui"]
