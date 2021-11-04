@@ -1,11 +1,11 @@
 FROM ubuntu:latest
 
 # install stuff
-RUN apt-get update && apt-get install -y apt-transport-https
-RUN apt-get install -y software-properties-common
+RUN apt update && apt-get install -y apt-transport-https
+RUN apt install -y software-properties-common
 
-# install jdk 8
-RUN apt-get install -y openjdk-8-jdk-headless
+# install jdk 17
+RUN apt install -y openjdk-17-jre
 
 VOLUME [ "/server" ]
 WORKDIR /server
@@ -13,4 +13,4 @@ WORKDIR /server
 EXPOSE 25565/tcp
 EXPOSE 25565/udp
 
-CMD ["java", "-jar","server.jar","nogui"]
+ENTRYPOINT ["java", "-Xms1G", "-Xmx4G", "-jar", "server.jar", "nogui"]
